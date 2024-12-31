@@ -31,7 +31,6 @@ li:hover {
 }
 
 /* Links */
-
 a:link {
 	color: rgb(202, 202, 202);
 	background-color: transparent;
@@ -39,7 +38,6 @@ a:link {
 }
 
 /* Warning */
-
 .WarningBlur {
 	backdrop-filter: blur(8px);
 	background-color: rgba(0, 0, 0, 0.3);
@@ -119,7 +117,6 @@ a:link {
 }
 
 /* Header Styles */
-
 .Header {
 	height: 130px;
 	width: 100%;
@@ -136,7 +133,7 @@ a:link {
 .HeaderNav {
 	padding: 4px 15px;
 	left: calc(1.5% - 10.5%);
-	margin-top: 10px;
+	bottom: 15px;
 	justify-content: center;
 	align-items: center;
 	display: flex;
@@ -287,47 +284,62 @@ a:link {
 
 .MainBody {
 	top: 100px;
-	right: 45px;
-	width: 75%;
+	width: 80%;
 	margin: auto;
 	display: table;
 	position: relative;
 	user-select: none;
 }
 
+.TopCards {
+	display: flex;
+}
+
 .Card {
-	height: 270px;
-	width: 33.33%;
-	float: left;
+	width: 100%;
+	height: 310px;
+	line-height: 22px;
+	margin-right: 140px;
+	padding: 15px 20px 10px 10px;
+	display: grid;
+	position: relative;
 	transition: transform .2s;
+	border-radius: var(--bordersrad) 0px 0px var(--bordersrad);
+	color: var(--Wtext);
 }
 
 .Card:hover {
 	transform: scale(1.05);
 }
 
-.CardText {
-	width: 55%;
-	height: 100%;
-	line-height: 18px;
-	padding: 5px 20px 20px 5px;
-	border-radius: 8px 0px 0px 8px;
-	float: left;
-	color: var(--Wtext);
-}
-
 .Card h2 {
 	margin-top: 10px;
+	margin-bottom: -10px;
 	line-height: 23px;
+}
+
+#CardVial {
+	width: 110px;
+	height: 300px;
+	right: -120px;
+	padding: 15px 15px 20px 5px;
+	position: absolute;
+	box-shadow: var(--shadow);
+	border-radius: var(--bordersrad);
+	background: var(--paper-background);
 }
 
 .Supplies {
 	padding: 10px;
 	line-height: 30px;
-	width: 94%;
-	top: 325px;
+	width: 90%;
+	top: 380px;
+	left: 0; 
+	right: 0;
 	text-align: center;
 	position: absolute;
+	display: table;
+	margin: auto;
 	transition: transform .2s;
 	color: var(--text);
 	box-shadow: var(--shadow);
@@ -339,62 +351,35 @@ a:link {
 	transform: scale(1.05);
 }
 
-#CardVial {
-	width: 100px;
-	height: 100%;
-	right: 7px;
-	padding: 15px 20px 10px 10px;
-	position: relative;
-	box-shadow: var(--shadow);
-	border-radius: var(--bordersrad);
-	background: var(--paper-background);
-}
-
 /* Top Body Media */
-
 @media screen and (max-width: 1400px) {
 	.MainBody {
 		top: 50px;
-		right: 0px;
+	}
+	.TopCards {
+		display: table;
 	}
 	.Card {
-		width: 100%;
-		margin-bottom: 50px;
-		left: 10%;
-		position: relative;
-	}
-	.CardText {
-		width: 50%;
-		padding-right: 100px;
-		line-height: 25px;
+		width: 55%;
+		min-width: 280px;
+		margin-bottom: 40px;
+		line-height: 30px;
+		left: -60px;
+		margin-right: auto;
+		margin-left: auto;
 	}
 	.Supplies {
-		top: 1000px;
-		padding-bottom: 80px;
-	}
-}
-
-@media screen and (max-width: 500px) {
-	.MainBody {
-		width: calc(100% - 30px);
-		margin: 15px;
-	}
-	.Card {
-		width: 100%;
-		margin-bottom: 50px;
-		left: 10%;
-		position: relative;
-		height: fit-content;
-		border-radius: 8px;
+		top: 1160px;
+		width: 75%;
+		padding-bottom: 40px;
 	}
 }
 
 /* Bottom Body Styles */
-
 .SecondBody {
 	width: 95%;
 	height: 750px;
-	top: 400px;
+	bottom: -400px;
 	padding: 5px;
 	border-radius: 40px 40px 0px 0px;
 	box-shadow: 0px 0px 30px 2px rgba(0,0,0,0.7);
@@ -416,9 +401,10 @@ a:link {
 
 .MisCard div, .FaqCard div{
 	width: 250px;
-	min-height: 250px;
+	height: 260px;
 	padding: 5px;
 	margin-right: 50px;
+	overflow: clip;
 	box-shadow:
 		inset 0 -40px 40px rgba(0,0,0,0.2),
 		0 5px 6px 5px rgba(0,0,0,0.2);
@@ -440,14 +426,13 @@ a:link {
 }
 
 /* Bottom Body Media */
-
 @media screen and (max-width: 1400px) {
 	.SecondBody {
-		height: 1400px;
+		height: 1490px;
+		bottom: -350px;
 	}
 	.MisCard, .FaqCard{
 		display: table;
-		
 	}
 	.MisCard div, .FaqCard div{
 		width: 38%;
@@ -459,28 +444,30 @@ a:link {
 }
 
 /* Card Colors */
-
-.Cardftm {
+.TopCards .Card:nth-of-type(1) {
 	background-image: linear-gradient(0deg, #2C4DA2FF 0%, #2f5bc9 100%);
 }
 
-.Cardmtf {
-	background-image: linear-gradient(0deg, #9C2CA2FF 0%, #C92F86FF 100%);
+.TopCards .Card:nth-of-type(2) {
+	background-image: linear-gradient(0deg, rgb(177, 47, 160) 0%, #C92F86FF 100%);
 }
 
-.Cardblocker {
-	background-image: linear-gradient(0deg, #4DA22CFF 0%, #2FC993FF 100%);
+.TopCards .Card:nth-of-type(3) {
+	background-image: linear-gradient(0deg, rgb(29, 153, 45) 0%, rgb(36, 180, 120) 100%);
 }
 
 /* Tape Styles */
-
 .Tape {
 	height: 3vmin;
-	top: -22px;
-	width: 180px;
+	min-height: 25px;
+	top: -24px;
+	width: 190px;
 	z-index: 1;
 	opacity: 0.5;
-	left: calc(49.5% - 180px/2);
+	left: 0px; 
+	right: 15px;
+	margin-right: auto;
+	margin-left: auto;
 	position: absolute;
 	background-color: var(--tape-gray);
 	border-right: 1px dotted var(--tape-edge-gray);
@@ -488,13 +475,13 @@ a:link {
 }
 
 .T2 {
-	left: calc(0% + 55px);
 	width: 150px;
+	margin: none;
+	right: calc(100% - 260px);
 }
 
 .T3 {
-	left: calc(47.5% - 170px/2);
-	top: 310px;
+	top: 365px;
 }
 
 /* Tape Media */
@@ -503,10 +490,13 @@ a:link {
 		display: none;
 	}
 	.T2 {
-		left: 42%;
+		left: 0px; 
+		right: 15px;
+		margin-right: auto;
+		margin-left: auto;
 	}
 	.T3 {
-		top: 985px;
+		top: 1145px;
 	}
 }
 
