@@ -85,6 +85,9 @@ hr {
 		top: 60px;
 		display: table;
 	}
+	.Contents {
+		font-size: 15px;
+	}
 }
 
 /* Collapsible Styles */
