@@ -156,6 +156,7 @@ a:link {
 
 /* The Guide Text */
 #HeaderNavL {
+	width: 300px;
 	height: 80px;
 	padding: 10px;
 	display: flex;
@@ -295,25 +296,26 @@ a:link {
 	user-select: none;
 }
 
+.TopCards {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	gap: 20px;
+}
+
 .Card {
 	height: 270px;
-	width: 33.33%;
-	float: left;
+	width: 100%;
+	box-sizing: border-box;
+	position: relative;
 	transition: transform .2s;
+	border-radius: 8px;
+	color: var(--Wtext);
+	padding: 5px 140px 20px 5px;
+	display: inline-block;
 }
 
 .Card:hover {
 	transform: scale(1.05);
-}
-
-.CardText {
-	width: 55%;
-	height: 100%;
-	line-height: 18px;
-	padding: 5px 20px 20px 5px;
-	border-radius: 8px 0px 0px 8px;
-	float: left;
-	color: var(--Wtext);
 }
 
 .Card h2 {
@@ -339,12 +341,14 @@ a:link {
 	transform: scale(1.05);
 }
 
-#CardVial {
-	width: 100px;
+.CardVial {
+	width: 120px;
 	height: 100%;
-	right: 7px;
-	padding: 15px 20px 10px 10px;
-	position: relative;
+	top: 0;
+	right: 0;
+	padding: 10px;
+	box-sizing: border-box;
+	position: absolute;
 	box-shadow: var(--shadow);
 	border-radius: var(--bordersrad);
 	background: var(--paper-background);
@@ -357,11 +361,11 @@ a:link {
 		top: 50px;
 		right: 0px;
 	}
+	.TopCards {
+		grid-template-columns: 1fr;
+	}
 	.Card {
 		width: 100%;
-		margin-bottom: 50px;
-		left: 10%;
-		position: relative;
 	}
 	.CardText {
 		width: 50%;
@@ -380,12 +384,14 @@ a:link {
 		margin: 15px;
 	}
 	.Card {
-		width: 100%;
-		margin-bottom: 50px;
-		left: 10%;
-		position: relative;
-		height: fit-content;
-		border-radius: 8px;
+		padding: 5px 120px 20px 5px;
+		height: max-content;
+	}
+	.CardVial {
+		width: 100px;
+		height: auto;
+		top: 0;
+		right: 0;
 	}
 }
 
@@ -443,18 +449,34 @@ a:link {
 
 @media screen and (max-width: 1400px) {
 	.SecondBody {
-		height: 1400px;
+		height: fit-content;
+		padding-bottom: 50px;
 	}
-	.MisCard, .FaqCard{
-		display: table;
-		
+	.MisCard, .FaqCard {
+		display: grid;
+		width: calc(80% - 40px);
+		grid-template-columns: 1fr 1fr;
+		gap: 20px;
+		margin: 0 calc(10% + 20px);
 	}
-	.MisCard div, .FaqCard div{
-		width: 38%;
-		margin-bottom: 40px;
-		margin-right: 7%;
+	.MisCard div, .FaqCard div {
+		width: 100%;
+		max-width: 260px;
+		min-height: 260px;
+		height: 100%;
+		margin: 0;
 		line-height: 20px;
-		float: right;
+		box-sizing: border-box;
+		justify-self: center;
+	}
+}
+@media screen and (max-width: 600px) {
+	.MisCard, .FaqCard {
+		display: grid;
+		width: calc(80% - 40px);
+		grid-template-columns: 1fr;
+		gap: 20px;
+		margin: 0 calc(10% + 20px);
 	}
 }
 
