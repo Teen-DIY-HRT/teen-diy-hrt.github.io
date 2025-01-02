@@ -3,7 +3,8 @@
 	--bordersrad: 8px;
 	--shadow: 0px 0px 5px 0px #292929;
 	--background: #c9c9c9;
-	--paper-background: white;
+	--Wbackground: white;
+	--paper-background: repeating-linear-gradient(white 0px, white 25px, steelblue 26px);
 
 	--tape-gray: #dbd8be;
 	--tape-edge-gray: #b7b49d;
@@ -19,15 +20,6 @@ body {
 	background-color: #292929;
 	resize: none;
 	overflow-x: hidden;
-}
-
-li {
-	display: inline;
-	transition: transform .2s;
-}
-
-li:hover {
-	transform: scale(1.05);
 }
 
 /* Links */
@@ -124,7 +116,7 @@ li:hover {
 	height: fit-content;
 	width: 100%;
 	padding-bottom: 30px;
-	background-color: #c9c9c9;
+	background-color: var(--background);
 }
 	
 .HeaderPos {
@@ -144,7 +136,8 @@ li:hover {
 .HeaderLeft {
 	margin-left: 30px;
 	margin-top: 5px;
-	position: relative;
+	z-index: 2;
+	position: absolute;
 }
 
 /* All the NavBar content on the right */
@@ -156,16 +149,16 @@ li:hover {
 
 /* The Guide Text */
 #HeaderNavL {
-	width: 300px;
+	width: 600px;
 	height: 80px;
 	padding: 10px;
-	display: flex;
+	display: grid;
 	text-align: center;
 	align-items: center;
 	color: var(--text);
 	box-shadow: var(--shadow);
 	border-radius: var(--bordersrad);
-	background: var(--paper-background);
+	background-color: var(--Wbackground);
 }
 
 /* The Social Media Column */
@@ -177,7 +170,7 @@ li:hover {
 	align-items: center;
 	box-shadow: var(--shadow);
 	border-radius: var(--bordersrad);
-	background: var(--paper-background);
+	background-color: var(--Wbackground);
 }
 
 #HeaderTitle {
@@ -188,6 +181,7 @@ li:hover {
 	text-align: center;
 	position: relative;
 	margin: auto;
+	user-select: none;
 	color: var(--text);
 	box-shadow: var(--shadow);
 	border-radius: var(--bordersrad);
@@ -199,12 +193,16 @@ li:hover {
 	padding: 4px;
 	margin: 18px;
 	border-radius: var(--bordersrad);
+	transition: transform .2s;
+}
+
+.NavIcon:hover {
+	transform: scale(1.05);
 }
 
 #NavLogo {
 	width: 150px;
 	padding: 22px 15px 10px 15px;
-	z-index: 1;
 	box-shadow: var(--shadow);
 	border-radius: var(--bordersrad);
 	background: var(--paper-background);
@@ -217,7 +215,7 @@ li:hover {
 
 /* Header Body Media */
 
-@media screen and (max-width: 1400px) {
+@media screen and (max-width: 1570px) {
 	.Header {
 		padding-bottom: 60px;
 	}
@@ -270,12 +268,12 @@ li:hover {
 		box-shadow: none;
 	}
 	#HeaderNavL {
-		border-top: 2px solid black;
+		border-top: 2px solid rgb(185, 185, 185);
 		margin-bottom: 0;
 	}
 	#HeaderNavR {
 		margin-top: -1px;
-		border-bottom: 2px solid black;
+		border-bottom: 2px solid rgb(185, 185, 185);
 	}
 }
 
@@ -294,15 +292,25 @@ li:hover {
 	grid-template-columns: 1fr 1fr 1fr;
 }
 
+.BottomCards {
+	display: grid;
+	gap: 20px;
+	grid-template-columns: 1fr 1fr 1fr;
+}
+
+.BottomCards div {
+	outline: 3px solid white;
+}
+
 .Card {
 	height: 270px;
 	width: 360px;
-	box-sizing: border-box;
-	position: relative;
 	transition: transform .2s;
-	border-radius: 8px;
 	color: var(--Wtext);
 	padding: 5px 140px 20px 5px;
+	border-radius: var(--bordersrad);
+	box-sizing: border-box;
+	position: relative;
 	display: inline-block;
 	justify-self: center;
 }
@@ -316,27 +324,11 @@ li:hover {
 	line-height: 23px;
 }
 
-.Supplies {
-	padding: 10px;
-	line-height: 30px;
-	width: 94%;
-	max-width: 300px;
-	left: 50%;
-	transform: translateX(-50%);
-	text-align: center;
-	transition: transform .2s;
-	color: var(--text);
-	box-shadow: var(--shadow);
-	border-radius: var(--bordersrad);
-	background: var(--paper-background);
-	position: relative;
-}
-
 .Supplies:hover {
 	transform: translateX(-50%) scale(1.05);
 }
 
-.CardVial {
+.CardVial, .CardVialB {
 	width: 120px;
 	height: 100%;
 	top: 0;
@@ -344,9 +336,21 @@ li:hover {
 	padding: 10px;
 	box-sizing: border-box;
 	position: absolute;
-	box-shadow: var(--shadow);
 	border-radius: var(--bordersrad);
 	background: var(--paper-background);
+}
+
+.CardVialB {
+	border-radius: var(--bordersrad) 0px 0px var(--bordersrad);
+}
+
+hr {
+	border-radius: 5px;
+	width: 95%;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	border: 2px solid;
+	color: white;
 }
 
 /* Top Body Media */
@@ -358,7 +362,10 @@ li:hover {
 	.TopCards {
 		grid-template-columns: 1fr 1fr;
 	}
-	.Cardblocker {
+	.BottomCards {
+		grid-template-columns: 1fr 1fr;
+	}
+	.End {
 		grid-column-start: 1;
 		grid-column-end: 3;
 	}
@@ -371,7 +378,10 @@ li:hover {
 	.TopCards {
 		grid-template-columns: 1fr;
 	}
-	.Cardblocker {
+	.BottomCards {
+		grid-template-columns: 1fr;
+	}
+	.End {
 		grid-column-start: 1;
 		grid-column-end: 2;
 	}
@@ -463,16 +473,28 @@ li:hover {
 
 /* Card Colors */
 
-.Cardftm {
-	background-image: linear-gradient(0deg, #2C4DA2FF 0%, #2f5bc9 100%);
+.CardFTM {
+	background-color: rgb(27, 76, 202);
 }
 
-.Cardmtf {
-	background-image: linear-gradient(0deg, #9C2CA2FF 0%, #C92F86FF 100%);
+.CardMTF {
+	background-color: rgb(212, 30, 152);
 }
 
-.Cardblocker {
-	background-image: linear-gradient(0deg, #4DA22CFF 0%, #2FC993FF 100%);
+.CardBlocker {
+	background-color: rgb(16, 182, 124);
+}
+
+.CardPassFTM {
+	background-color: rgb(35, 67, 148);
+}
+
+.CardPassMTF {
+	background-color: rgb(156, 42, 118);
+}
+
+.CardSupplies {
+	background-color: rgb(24, 150, 91);
 }
 
 /* Tape Styles */
@@ -490,16 +512,15 @@ li:hover {
 	border-left: 1px dotted var(--tape-edge-gray);
 }
 
+.T1 {
+	width: 160px;
+	left: 10px;
+}
+
 /* Tape Media */
 @media screen and (max-width: 1400px) {
 	.T1 {
 		display: none;
-	}
-}
-
-@media screen and (max-width: 500px) {
-	.T2 {
-		left: calc(50% - 75px)
 	}
 }
 

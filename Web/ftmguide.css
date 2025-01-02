@@ -31,7 +31,7 @@ dd::before {
 
 .MainBody {
 	width: 87%;
-	top: 130px;
+	top: 80px;
 }
 
 #ContentsHead {
@@ -53,6 +53,7 @@ dd::before {
 	border-radius: 20px;
 	margin: auto;
 	position: relative;
+	color: var(--Btext);
 	background-color: var(--background);
 }
 
@@ -73,20 +74,24 @@ dd::before {
 	position: absolute;
 }
 
-hr {
+.Contents hr {
+	width: 90%;
 	border: 0; 
 	height: 2px; 
 	background-color: #949494;
 }
 
+hr {
+	width: 83%;
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
 /* Main Body Media */
-@media screen and (max-width: 1400px) {
+@media screen and (max-width: 1570px) {
 	.MainBody {
 		top: 60px;
 		display: table;
-	}
-	.Contents {
-		font-size: 15px;
 	}
 }
 
