@@ -66,14 +66,6 @@ dd::before {
 	margin-top: 30px;
 }
 
-#Decal {
-	width: 40%;
-	right: 10%;
-	top: 10%;
-	filter: opacity(70%);
-	position: absolute;
-}
-
 .Contents hr {
 	width: 90%;
 	border: 0; 
@@ -85,6 +77,32 @@ hr {
 	width: 83%;
 	margin-top: 30px;
 	margin-bottom: 30px;
+}
+
+#Decal {
+	width: 40%;
+	right: 10%;
+	top: 10%;
+	filter: opacity(70%);
+	position: absolute;
+}
+
+#Decalmtf {
+	width: 40%;
+	right: 5%;
+	top: 15%;
+	filter: opacity(70%);
+	position: absolute;
+	clip: rect(0px,auto,600px,0px);
+}
+
+#Decalftm {
+	width: 35%;
+	right: 0%;
+	top: 15%;
+	filter: opacity(70%);
+	position: absolute;
+	clip: rect(0px,auto,335px,0px);
 }
 
 /* Main Body Media */

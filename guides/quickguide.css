@@ -1,0 +1,35 @@
+/* Small Guides */
+#QuickPara {
+    width: 85%;
+	color: var(--Btext);
+    margin: auto;
+    position: relative;
+}
+
+#ParaHead {
+	margin: 0px;
+	height: 30px;
+	padding: 20px;
+	border-radius: 20px;
+	width: calc(100% - 40px);
+	left: 0px;
+	top: 50px;
+	z-index: 1;
+	position: absolute;
+	background: var(--paper-background);
+}
+
+#QuickPara div {
+	padding: 20px 18px 10px 18px;
+	border-radius: 0px 0px 20px 20px;
+	top: 100px;
+	font-size: 20px;
+	line-height: 32px;
+	overflow: hidden;
+	position: relative;
+	background-color: var(--background);
+}
+
+.Misc {
+    margin-top: 200px;
+}
