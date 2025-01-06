@@ -1,6 +1,6 @@
 /* Small Guides */
 #QuickPara {
-    width: 85%;
+    width: 83%;
 	color: var(--Btext);
     margin: auto;
     position: relative;
@@ -10,6 +10,7 @@
 	margin: 0px;
 	height: 30px;
 	padding: 20px;
+	line-height: 40px;
 	border-radius: 20px;
 	width: calc(100% - 40px);
 	left: 0px;
@@ -30,6 +31,18 @@
 	background-color: var(--background);
 }
 
+#QuickPara h4, #QuickPara dl {
+	margin-left: 30px;
+	margin-bottom: -5px;
+}
+
 .Misc {
     margin-top: 200px;
+}
+
+#Diagram {
+	margin: 25px 0px 10px 20px;
+	z-index: 2;
+	border-radius: 20px;
+	float: right;
 }
