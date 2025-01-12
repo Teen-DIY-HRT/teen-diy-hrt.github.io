@@ -283,7 +283,6 @@ body {
 	width: 1120px;
 	margin: 30px auto 0;
 	position: relative;
-	user-select: none;
 }
 
 .TopCards {
@@ -309,6 +308,7 @@ body {
 	color: var(--Wtext);
 	padding: 5px 140px 20px 5px;
 	border-radius: var(--bordersrad);
+	user-select: none;
 	box-sizing: border-box;
 	position: relative;
 	display: inline-block;

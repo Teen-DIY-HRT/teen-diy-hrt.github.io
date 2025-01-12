@@ -66,7 +66,7 @@ dd::before {
 	margin-top: 30px;
 }
 
-.Contents hr {
+.Contents hr, .CollText hr {
 	width: 90%;
 	border: 0; 
 	height: 2px; 
@@ -144,11 +144,11 @@ hr {
 	right: 10px;
 	float: left;
 	position: relative;
-	transition: transform 0.1s;
+	transition: transform 0.15s;
 }
 
 .Active:before {
-	transform: rotate(90deg);
+	transform: rotate(180deg);
 }
 
 .CollText {
@@ -172,6 +172,9 @@ hr {
 	width: 80%;
 	height: 460px;
 	border-radius: 5px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .CollText img {
@@ -199,6 +202,13 @@ hr {
 #Teens {
 	margin: 30px;
 	float: right;
+}
+
+#EffectsMTF {
+	width: 80%;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 #Effects {
@@ -237,4 +247,20 @@ hr {
 .Cite {
 	margin-top: 30px;
 	border-radius: 20px 20px 0px 0px;
+}
+
+/* Mark Styles */
+
+mark {
+	padding-left: 3px;
+	padding-right: 3px;
+	border-radius: 3px;
+}
+
+.mtfguide mark {
+	background-color: rgb(238, 178, 178);
+}
+
+.ftmguide mark {
+	background-color: rgb(159, 190, 231);
 }
