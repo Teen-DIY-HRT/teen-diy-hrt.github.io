@@ -14,17 +14,8 @@ ol li::before {
     font-weight: bold;
 }
 
-dt::before, dd::before{
-    font-size: 40px;
-    top: -17px;
-    left: -15px;
-    content: "›";
-    position: absolute;
-}
-
-dd::before {
-    font-size: 30px;
-    top: -9px;
+dt, dd {
+	position: relative;
 }
 
 /* Main Body */
@@ -57,13 +48,27 @@ dd::before {
 	background-color: var(--background);
 }
 
-.Contents dt, .Contents dd {
-	left: 50px;
-	position: relative;
+.Contents dd {
+	margin-left: 55px;
 }
 
 .Contents dt {
+	margin-left: 30px;
 	margin-top: 30px;
+}
+
+
+.Contents dt::before, .Contents dd::before{
+    font-size: 40px;
+    top: -17px;
+    left: -15px;
+    content: "›";
+    position: absolute;
+}
+
+.Contents dd::before {
+    font-size: 30px;
+    top: -9px;
 }
 
 .Contents hr, .CollText hr {
@@ -81,9 +86,9 @@ hr {
 
 #Decal {
 	width: 40%;
-	right: 10%;
-	top: 10%;
-	filter: opacity(70%);
+	right: 15px;
+	top: 45px;
+	opacity: 0.7;
 	position: absolute;
 }
 
@@ -91,7 +96,7 @@ hr {
 	width: 40%;
 	right: 5%;
 	top: 15%;
-	filter: opacity(70%);
+	opacity: 0.7;
 	position: absolute;
 	clip: rect(0px,auto,600px,0px);
 }
@@ -100,7 +105,7 @@ hr {
 	width: 35%;
 	right: 0%;
 	top: 15%;
-	filter: opacity(70%);
+	opacity: 0.7;
 	position: absolute;
 	clip: rect(0px,auto,335px,0px);
 }
@@ -110,6 +115,12 @@ hr {
 	.MainBody {
 		top: 60px;
 		display: table;
+	}
+}
+
+@media screen and (max-width: 550px) {
+	#Decal {
+		display: none;
 	}
 }
 
@@ -164,7 +175,7 @@ hr {
 }
 
 .CollText div {
-	margin-left: 50px;
+	margin-left: 30px;
 }
 
 .CollText iframe {
@@ -237,6 +248,21 @@ hr {
 .CollIMG img {
 	width: 100%;
 	margin: 0px;
+}
+
+/* Collapsible @media queries */
+
+@media screen and (max-width: 900px) {
+	.CollBody {
+		width: 100%;
+	}
+
+	#Teens {
+		margin: 30px auto;
+		float: none;
+		display: block;
+		max-width: 70vw;
+	}
 }
 
 /* Bottom Body */
