@@ -84,6 +84,8 @@ hr {
 	margin-bottom: 30px;
 }
 
+/* Decals */
+
 #Decal {
 	width: 40%;
 	right: 15px;
@@ -98,7 +100,7 @@ hr {
 	top: 15%;
 	opacity: 0.7;
 	position: absolute;
-	clip: rect(0px,auto,600px,0px);
+	clip: rect(0px,auto,437px,0px);
 }
 
 #Decalftm {
@@ -270,9 +272,10 @@ hr {
 	margin-top: 80px;
 }
 
-.Cite {
-	margin-top: 30px;
-	border-radius: 20px 20px 0px 0px;
+#Marker {
+	margin-top: -20px;
+	color: #5e5e5e;
+	font-size: medium;
 }
 
 /* Mark Styles */
