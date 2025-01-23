@@ -278,6 +278,35 @@ hr {
 	font-size: medium;
 }
 
+/* Table */
+table {
+	width: 70%;
+	border-spacing: 0;
+	border-radius: 13px;
+	font-size: 18px;
+	box-shadow: -3px 3px 10px rgba(0, 0, 0, 0.1);
+	background-color: #dbdbdb;
+	color: #353535;
+	overflow: hidden;
+}
+  
+th {
+	color: white;
+}
+
+td, th {
+	padding: 11px;
+	text-align: left;
+}
+
+th:first-child { border-top-left-radius: 13px; }
+th:last-child { border-top-right-radius: 13px; }
+tr:nth-child(even) { background-color: #e0e0e0; }
+
+.mtfguide th { background-color: #db558d; }
+
+.ftmguide th { background-color: #5574db; }
+
 /* Mark Styles */
 
 mark {
@@ -292,4 +321,22 @@ mark {
 
 .ftmguide mark {
 	background-color: rgb(159, 190, 231);
+}
+
+/* Link Styles */
+
+.mtfguide a:link {
+	color: rgb(233, 17, 107);
+}
+
+.mtfguide a:visited {
+	color: rgb(233, 17, 107);
+}
+
+.ftmguide a:link {
+	color: rgb(51, 35, 224);
+}
+
+.ftmguide a:visited {
+	color: rgb(51, 35, 224);
 }
