@@ -24,10 +24,18 @@ body {
 
 /* Links */
 
-.Warning a:link {
-	color: rgb(202, 202, 202);
+a:link {
+	color: rgb(12, 148, 114);
 	background-color: transparent;
 	text-decoration: none;
+}
+
+a:visited {
+	color: rgb(12, 148, 114);
+}
+
+.Warning a:link {
+	color: rgb(202, 202, 202);
 }
 
 .Warning a:visited {
@@ -186,6 +194,7 @@ body {
 	position: relative;
 	margin: auto;
 	user-select: none;
+	cursor: pointer;
 	color: var(--text);
 	box-shadow: var(--shadow);
 	border-radius: var(--bordersrad);
@@ -295,15 +304,17 @@ body {
 }
 
 .TopCards {
-	display: grid;
 	gap: 20px;
 	grid-template-columns: 1fr 1fr 1fr;
+	display: grid;
+	cursor: pointer;
 }
 
 .BottomCards {
-	display: grid;
 	gap: 20px;
 	grid-template-columns: 1fr 1fr 1fr;
+	display: grid;
+	cursor: pointer;
 }
 
 .BottomCards div {
@@ -400,8 +411,8 @@ hr {
 
 .SecondBody {
 	width: 95%;
-	height: 750px;
-	padding: 5px;
+	height: fit-content;
+	padding: 5px 5px 80px 5px;
 	border-radius: 40px 40px 0px 0px;
 	box-shadow: 0px 0px 30px 2px rgba(0,0,0,0.7);
 	margin: 50px auto 0;
@@ -409,12 +420,18 @@ hr {
 	background-color: var(--background);
 }
 
+#MiscHeader {
+	text-align: center;
+	color: var(--Btext);
+}
+
 .MisCard, .FaqCard {
+	gap: 20px;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
 	display: grid;
 	position: relative;
 	justify-content: center;
-	grid-template-columns: 1fr 1fr 1fr 1fr;
-	gap: 20px;
+	cursor: pointer;
 	margin: 0 auto;
 }
 
@@ -423,39 +440,50 @@ hr {
 	position: relative;
 }
 
-.MisCard div, .FaqCard div {
-	width: 250px;
-	min-height: 250px;
-	padding: 5px;
-	box-shadow:
-		inset 0 -40px 40px rgba(0,0,0,0.2),
-		0 5px 6px 5px rgba(0,0,0,0.2);
-	float: left;
+.MisCard > div:nth-child(-n+8), .FaqCard > div:nth-child(-n+4) {
+	max-width: 260px;
+	min-width: 200px;
+	height: 150px;
+	padding: 13px;
+	border-radius: 20px;
+	line-height: 23px;
+	box-shadow: 0 0 10px 1px #a0a0a0;
+	overflow: hidden;
 	color: #1d1d1d;
-	background-color: #ddb888;
+	background-color: #dddddd;
 	font-family: "Itim", serif;
 	user-select: none;
-	transition: transform 0.3s ease;
 	justify-self: center;
+	position: relative;
 }
 
-.MisCard div:hover, .FaqCard div:hover {
-	transform: rotate(5deg);
+.MisCard h2, .MisCard p, .FaqCard h2, .FaqCard p {
+	position: relative;
+	z-index: 2;
 }
 
-#MiscHeader {
-	text-align: center;
-	color: var(--Btext);
+.MisCard div:hover p, .MisCard div:hover h2, .FaqCard div:hover p, .FaqCard div:hover h2 {
+	color: #ffffff;
+	transition: color .45s ease;
+}
+
+.MisCard div:hover .CardBG, .FaqCard div:hover .CardBG {
+	transform: scale(10);
+}
+
+.CardBG {
+	height: 128px;
+	width: 128px;
+	bottom: 110px;
+	left: 180px;
+	border-radius: 0% 0% 0% 50%;
+	z-index: 1;
+	background-color: #33b2c9;
+	position: absolute;
+	transition: all .6s ease;
 }
 
 /* Bottom Body Media */
-
-@media screen and (max-width: 1400px) {
-	.SecondBody {
-		height: fit-content;
-		padding-bottom: 50px;
-	}
-}
 
 @media screen and (max-width: 1189px) {
 	.MisCard, .FaqCard {
@@ -466,8 +494,7 @@ hr {
 	.MisCard div, .FaqCard div {
 		width: 100%;
 		max-width: 250px;
-		min-height: 250px;
-		height: 100%;
+		height: 150px;
 		line-height: 20px;
 		box-sizing: border-box;
 	}
@@ -482,28 +509,49 @@ hr {
 
 /* Card Colors */
 
-.CardFTM {
+.TopCards .Card:nth-child(1) {
 	background-color: rgb(27, 76, 202);
 }
 
-.CardMTF {
+.TopCards .Card:nth-child(2) {
 	background-color: rgb(212, 30, 152);
 }
 
-.CardBlocker {
+.TopCards .Card:nth-child(3){
 	background-color: rgb(16, 182, 124);
 }
 
-.CardPassFTM {
+.BottomCards .Card:nth-child(1) {
 	background-color: rgb(35, 67, 148);
 }
 
-.CardPassMTF {
+.BottomCards .Card:nth-child(2) {
 	background-color: rgb(156, 42, 118);
 }
 
-.CardSupplies {
+.BottomCards .Card:nth-child(3) {
 	background-color: rgb(24, 150, 91);
+}
+
+/* Bottom Card Colors */
+.MisCard div:nth-child(5) .CardBG {
+	background-color: #ee8f14;
+}
+.MisCard div:nth-child(n+6) .CardBG {
+	background-color: #4b4b4b;
+}
+
+.FaqCard div:nth-child(1) .CardBG {
+	background-color: #33b2c9;
+}
+.FaqCard div:nth-child(2) .CardBG {
+	background-color: rgb(27, 76, 202);
+}
+.FaqCard div:nth-child(3) .CardBG {
+	background-color: rgb(212, 30, 152);
+}
+.FaqCard div:nth-child(4) .CardBG {
+	background-color: rgb(16, 182, 124);
 }
 
 /* Tape Styles */

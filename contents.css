@@ -23,11 +23,11 @@ dd::before {
 /* Links */
 
 a:link {
-	color: rgb(87, 177, 154);
+	color: rgb(12, 148, 114);
 	background-color: transparent;
 	text-decoration: none;
 }
 
 a:visited {
-	color: rgb(87, 177, 154);
+	color: rgb(12, 148, 114);
 }
