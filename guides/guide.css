@@ -316,13 +316,11 @@ mark {
 	border-radius: 3px;
 }
 
-.mtfguide mark {
-	background-color: rgb(238, 178, 178);
-}
+.mtfguide mark {background-color: rgb(238, 178, 178);}
+#mtfguide {background-color: rgb(238, 178, 178);}
 
-.ftmguide mark {
-	background-color: rgb(159, 190, 231);
-}
+.ftmguide mark {background-color: rgb(159, 190, 231);}
+#ftmguide {background-color: rgb(159, 190, 231);}
 
 /* Link Styles */
 
