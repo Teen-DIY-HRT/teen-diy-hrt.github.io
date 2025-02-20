@@ -21,8 +21,8 @@ dt, dd {
 /* Main Body */
 
 .MainBody {
-	width: 87%;
-	top: 80px;
+	top: 50px;
+	width: 70%;
 }
 
 #ContentsHead {
@@ -39,7 +39,6 @@ dt, dd {
 
 .Contents {
 	padding: 20px;
-	width: 80%;
 	font-size: 19px;
 	border-radius: 20px;
 	margin: auto;
@@ -56,7 +55,6 @@ dt, dd {
 	margin-left: 30px;
 	margin-top: 30px;
 }
-
 
 .Contents dt::before, .Contents dd::before{
     font-size: 40px;
@@ -115,7 +113,7 @@ hr {
 /* Main Body Media */
 @media screen and (max-width: 1570px) {
 	.MainBody {
-		top: 60px;
+		width: 90%;
 		display: table;
 	}
 }
@@ -128,7 +126,6 @@ hr {
 
 /* Collapsible Styles */
 .CollBody {
-	width: 83%;
 	margin: auto;
 }
 

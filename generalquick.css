@@ -1,36 +1,49 @@
-.MainBody {
-	top: 40px;
+.QuickBody {
+	top: 50px;
+	width: 70%;
+	margin: auto;
+	position: relative;
 }
 
-.MainBody img {
+.QuickBody img {
     margin: 15px;
     width: 300px;
     border-radius: 10px;
     float: right;
 }
 
+/* Seperator */
+
 #ContentsHead {
 	margin: 0px;
 	height: 30px;
 	padding: 20px;
 	border-radius: 20px;
-	width: calc(100% - 40px);
-	left: 0px;
-	top: -30px;
-	position: absolute;
+	width: 100%;
+	right: 20px;
+	top: -20px;
+	position: relative;
 	background: var(--paper-background);
 }
 
 .Contents {
 	padding: 20px;
-	width: 90%;
 	font-size: 19px;
 	border-radius: 20px;
-    margin: auto;
+	margin: auto;
+	margin-bottom: 50px;
 	position: relative;
 	color: var(--Btext);
 	background-color: var(--background);
 }
+
+@media screen and (max-width: 1570px) {
+	.QuickBody {
+		width: 90%;
+	}
+}
+
+/* Seperator */
 
 .Contents hr, .QuickPara hr {
 	width: 90%;
@@ -49,14 +62,14 @@
 	border-radius: 20px;
 	width: calc(100% - 40px);
 	left: 0px;
-	top: 20px;
-	z-index: 1;
+	margin: 0;
+	z-index: 2;
 	position: relative;
 	background: var(--paper-background);
 }
 
 .QuickPara {
-    width: 90%;
+    width: 100%;
 	color: var(--Btext);
     margin: auto;
     position: relative;
@@ -67,6 +80,8 @@
 	border-radius: 0px 0px 20px 20px;
 	font-size: 20px;
 	line-height: 32px;
+	bottom: 20px;
+	margin-bottom: 30px;
 	overflow: hidden;
 	position: relative;
 	background-color: var(--background);
@@ -88,11 +103,11 @@ iframe {
 }
 
 .Misc {
-    margin-top: 70px;
+    margin-top: 20px;
 	border-radius: 30px 30px 0px 0px;
 }
 
-/* Table CSS */
+/* Contents CSS */
 
 dt, dd {
 	position: relative;
@@ -102,9 +117,12 @@ dt, dd {
 	margin-left: 55px;
 }
 
+.Contents dt:nth-child(n+3) {
+	margin-top: 30px;
+}
+
 .Contents dt {
 	margin-left: 30px;
-	margin-top: 30px;
 }
 
 .Contents dt::before, .Contents dd::before{
@@ -114,3 +132,17 @@ dt, dd {
     content: "›";
     position: absolute;
 }
+
+.QuickPara li {
+	margin-top: 0px;
+	line-height: 28px;
+	font-size: 20px;
+}
+
+/* Color CSS */
+
+.mtfguide mark {background-color: rgb(216, 15, 15);}
+#mtfguide {background-color: rgb(238, 178, 178);}
+
+.ftmguide mark {background-color: rgb(159, 190, 231);}
+#ftmguide {background-color: rgb(159, 190, 231);}

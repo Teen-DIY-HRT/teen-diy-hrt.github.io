@@ -214,15 +214,17 @@ mark {
 }
 
 .NavIcon {
-	width: 66px;
+	width: 65px;
+	height: 60px;
 	padding: 4px;
 	margin: 18px;
-	border-radius: var(--bordersrad);
 	transition: transform .2s;
+	filter: invert(38%);
+	cursor: pointer;
 }
 
 .NavIcon:hover {
-	transform: scale(1.05);
+	transform: scale(1.08);
 }
 
 #NavLogo {
@@ -417,6 +419,7 @@ hr {
 
 .SecondBody {
 	width: 95%;
+	min-width: 400px;
 	height: fit-content;
 	padding: 5px 5px 80px 5px;
 	border-radius: 40px 40px 0px 0px;
@@ -446,9 +449,9 @@ hr {
 }
 
 .MisCard > div:nth-child(-n+8), .FaqCard > div:nth-child(-n+4) {
-	max-width: 260px;
-	min-width: 200px;
-	height: 150px;
+	max-width: 280px;
+	min-width: 250px;
+	height: 160px;
 	padding: 13px;
 	border-radius: 20px;
 	line-height: 23px;
@@ -460,6 +463,18 @@ hr {
 	user-select: none;
 	justify-self: center;
 	position: relative;
+}
+
+.CardBG {
+	height: 128px;
+	width: 128px;
+	bottom: 110px;
+	left: 180px;
+	border-radius: 0% 0% 0% 50%;
+	z-index: 1;
+	background-color: #33b2c9;
+	position: absolute;
+	transition: all .6s ease;
 }
 
 .MisCard h2, .MisCard p, .FaqCard h2, .FaqCard p {
@@ -476,26 +491,23 @@ hr {
 	transform: scale(10);
 }
 
-.CardBG {
-	height: 128px;
-	width: 128px;
-	bottom: 110px;
-	left: 180px;
-	border-radius: 0% 0% 0% 50%;
-	z-index: 1;
-	background-color: #33b2c9;
-	position: absolute;
-	transition: all .6s ease;
-}
-
 /* Bottom Body Media */
 
-@media screen and (max-width: 1189px) {
+@media screen and (max-width: 1250px) {
 	.MisCard, .FaqCard {
 		width: calc(80% - 40px);
 		min-width: 520px;
 		grid-template-columns: 1fr 1fr;
 	}
+
+	.MisCard > div:nth-child(-n+8), .FaqCard > div:nth-child(-n+4) {
+		max-width: 350px;
+		min-width: 300px;
+		height: 200px;
+		font-size: 18px;
+		line-height: 26px;
+	}
+
 	.MisCard div, .FaqCard div {
 		width: 100%;
 		max-width: 250px;
@@ -503,12 +515,29 @@ hr {
 		line-height: 20px;
 		box-sizing: border-box;
 	}
+
+	.CardBG {
+		left: 230px;
+		bottom: 130px;
+		border-radius: 0% 0% 0% 35%;
+	}
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 680px) {
 	.MisCard, .FaqCard {
 		min-width: 0;
 		grid-template-columns: 1fr;
+	}
+
+	.MisCard > div:nth-child(-n+8), .FaqCard > div:nth-child(-n+4) {
+		max-width: 500px;
+		min-width: 370px;
+		height: 250px;
+	}
+
+	.CardBG {
+		left: 260px;
+		bottom: 170px;
 	}
 }
 
